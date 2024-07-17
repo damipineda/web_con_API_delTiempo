@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Local</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-4 mb-4">Clima Local</h1>
+        <div class="row">
+            <div class="col-md-9 mx-auto">
+                <form id="formularioBusqueda" class="input-group mb-3">
+                    <input type="text" class="form-control" id="entradaBusqueda" placeholder="Buscar ciudad..." aria-label="Buscar ciudad" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Buscar</button>
+                    </div>
+                </form>
+                <div id="alertaError" class="alert alert-danger d-none" role="alert"></div>
+                <div id="datosClima" class="row">
+                    <div id="encabezadoClima" class="col-12"></div>
+                    <div id="tarjetasClima" class="col-12">
+                        <div class="row">
+                            <!-- Agrega las tarjetas en blanco aquí -->
+                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta1"></div>
+                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta2"></div>
+                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta3"></div>
+                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta4"></div>
+                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

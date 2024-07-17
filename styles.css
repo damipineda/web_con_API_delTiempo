@@ -1,0 +1,47 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-weight: 600;
+}
+
+.tarjetaClima {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    width: calc(100/3);
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.tarjetaClima:hover {
+    transform: scale(1.05);
+}
+
+.tarjetaClima img {
+    max-width: 80px;
+}
+
+body { /* Estilo por defecto */
+    background-image: url('ruta/a/imagen/soleado.jpg'); 
+}
+
+body.nublado {
+    background-image: url('ruta/a/imagen/nublado.jpg');
+}
+
+body.lluvia {
+    background-image: url('ruta/a/imagen/lluvia.jpg');
+}
