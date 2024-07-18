@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiKey = '5b0ad7552edd4b17ad5171009241707'; // Reemplaza con tu clave API real
+    const apiKey = '5b0ad7552edd4b17ad5171009241707'; 
     const urlBase = 'http://api.weatherapi.com/v1/';
 
     const formularioBusqueda = document.getElementById('formularioBusqueda');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         encabezadoClima.appendChild(informacionLocalidad);
     
         // Obtener el código de la condición del primer día para establecer el fondo
-        const codigoCondicion = datos.current.condition.code;
+        const codigoCondicion = datos.forecast.forecastday[0].day.condition.code;
         cambiarFondo(codigoCondicion);
     
         // Actualizar el contenido de las tarjetas
@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             encabezadoClima.insertBefore(mensajeUbicacionActual, informacionLocalidad);
         }
     }
+
     function mostrarError(mensaje) {
         alertaError.textContent = mensaje;
         alertaError.classList.remove('d-none');
@@ -102,14 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cambiarFondo(codigoCondicion) {
-        if (codigoCondicion >= 1000 && codigoCondicion < 2000) { // Lluvia
-            body.style.backgroundImage = "url('https://images.pexels.com/photos/1118870/pexels-photo-1118870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"; // Imagen de lluvia
-        } else if (codigoCondicion >= 2000 && codigoCondicion < 3000) { // Tormenta
-            body.style.backgroundImage = "url('https://images.pexels.com/photos/111263/pexels-photo-111263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"; // Imagen de tormenta
-        } else if (codigoCondicion >= 800 && codigoCondicion < 900) { // Nublado
-            body.style.backgroundImage = "url('https://images.pexels.com/photos/3035610/pexels-photo-3035610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"; // Imagen de nublado
-        } else { // Soleado
-            body.style.backgroundImage = "url('https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"; // Imagen de soleado
+        if (codigoCondicion === 1000) { // Soleado
+            body.className = 'soleado';
+        } else if (codigoCondicion >= 1003 && codigoCondicion <= 1030) { // Nublado
+            body.className = 'nublado';
+        } else if (codigoCondicion >= 1063 && codigoCondicion <= 1201) { // Lluvia
+            body.className = 'lluvia';
+        } else if (codigoCondicion >= 1087 && codigoCondicion <= 1273) { // Tormenta
+            body.className = 'tormenta';
+        } else { // Por defecto, soleado
+            body.className = 'soleado';
         }
     }
 

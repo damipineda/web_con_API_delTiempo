@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text-center mt-4 mb-4">Clima Local</h1>
+        <h1 class="text-center mt-4 mb-4">APP DEL CLIMA</h1>
         <div class="row">
             <div class="col-md-9 mx-auto">
                 <form id="formularioBusqueda" class="input-group mb-3">
@@ -21,20 +21,21 @@
                 <div id="alertaError" class="alert alert-danger d-none" role="alert"></div>
                 <div id="datosClima" class="row">
                     <div id="encabezadoClima" class="col-12"></div>
-                    <div id="tarjetasClima" class="col-12">
-                        <div class="row">
-                            <!-- Agrega las tarjetas en blanco aquí -->
-                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta1"></div>
-                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta2"></div>
-                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta3"></div>
-                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta4"></div>
-                            <div class="tarjetaClima col-md-2 mb-4" id="tarjeta5"></div>
-                        </div>
+                    <div id="tarjetasClima" class="col-12 d-flex justify-content-between">
+                        <!-- tarjetas -->
+                        <div class="tarjetaClima col-md-3 mb-4" id="tarjeta1"></div>
+                        <div class="tarjetaClima col-md-3 mb-4" id="tarjeta2"></div>
+                        <div class="tarjetaClima col-md-3 mb-4" id="tarjeta3"></div>
+                        <div class="tarjetaClima col-md-3 mb-4" id="tarjeta4"></div>
+                        <div class="tarjetaClima col-md-3 mb-4" id="tarjeta5"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <footer>
+        <p>Es un proyecto de Damian Pineda / utiliza el API de weatherapi.com</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
